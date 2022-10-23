@@ -30,7 +30,7 @@ $$\sum _{t=0}^{\infty }\gamma ^{t}r_{t}.$$
  
 We emphasize that the hidden state $h_{0}$,$\ldots $,$h_{T}$ are unobservable to the player.
 
-The learning goal of the player is to find a policy that $\pi :S\rightarrow C$ that maximizes the expected cumulative discounted reward $\mathbb {E [\sum_{t=0}^{\infty}\gamma^{t}R(h_{t},a_{t},b_{t})\vert (a_{t},b_{t})\sim \pi ]$, where the expectation accounts for all randomness in the model and the player. Let $\pi^{*}$ denote the optimal policy. For each observable state $s\in S$, let $h(s)$ be the associated hidden state. The optimal expected reward achievable is defined as
+The learning goal of the player is to find a policy that $\pi :S\rightarrow C$ that maximizes the expected cumulative discounted reward $\mathbb {E}[\sum_{t=0}^{\infty}\gamma^{t}R(h_{t},a_{t},b_{t})\vert (a_{t},b_{t})\sim \pi ]$, where the expectation accounts for all randomness in the model and the player. Let $\pi^{*}$ denote the optimal policy. For each observable state $s\in S$, let $h(s)$ be the associated hidden state. The optimal expected reward achievable is defined as
 
 $$V^{*}=\mathbb {E}_{h_0\sim \Gamma _{0},s\sim \Psi (h)}[V^{*}(s)]$$
  
