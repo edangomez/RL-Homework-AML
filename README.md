@@ -17,4 +17,4 @@ You will conduct experiments on a small Home World, which mimic the environment 
 <center>
   **Rooms and objects in the Home world with connecting pathways**
   ![image](https://courses.edx.org/assets/courseware/v1/24148b9ea8dfaef68148bb9db4c196aa/asset-v1:MITx+6.86x+1T2021+type@asset+block/images_homeworld.jpg)
-<center>
+</center>
