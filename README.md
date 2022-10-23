@@ -28,4 +28,28 @@ You will conduct experiments on a small Home World, which mimic the environment 
 
 At the beginning of each episode, the player is placed at a random room and provided with a randomly selected quest. An example of a quest given to the player in text is You are hungry now. To complete this quest, the player has to navigate through the house to reach the kitchen and eat the apple (i.e., type in command eat apple). In this game, the room is hidden from the player, who only receives a description of the underlying room. The underlying game state is given by $h=(q,r)$, where $r$ is the index of room and $q$ is the index of quest. At each step, the text description $s$ provided to the player contains two parts $s=(s_r ; s_q)$, where $s_r$ is the room description (which are varied and randomly provided) and $s_q$ is the quest description. The player receives a positive reward on completing a quest, and negative rewards for invalid command (e.g., eat TV). Each non-terminating step incurs a small deterministic negative rewards, which incentives the player to learn policies that solve quests in fewer steps. (see the Table 1) An episode ends when the player finishes the quest or has taken more steps than a fixed maximum number of steps.
 
-Each episode produces a full record of interaction $(h_{0},s_{0},a_{0},b_{0},r_{0},\ldots ,h_{t},s_{t},a_{t},b_{t},r_{t},h_{t+1}\ldots)$ where $h_{0}=(h_{r,0},h_{q,0})\sim \Gamma_{0}$ ($\Gamma_{0}$ denotes an initial state distribution), $h_{t}\sim P(\cdot |h_{t-1},a_{t-1},b_{t-1})$, $s_{t}\sim \Psi (h_{t})$, $r_{t}=R(h_{t},a_{t},b_{t})$
+Each episode produces a full record of interaction $(h_{0},s_{0},a_{0},b_{0},r_{0},\ldots ,h_{t},s_{t},a_{t},b_{t},r_{t},h_{t+1}\ldots)$ where $h_{0}=(h_{r,0},h_{q,0})\sim \Gamma_{0}$ ( $\Gamma_{0}$ denotes an initial state distribution), $h_{t}\sim P(\cdot |h_{t-1},a_{t-1},b_{t-1})$, $s_{t}\sim \Psi (h_{t})$, $r_{t}=R(h_{t},a_{t},b_{t})$ and all commands $(a_{t},b_{t})$ are chosen by the player. The record of interaction observed by the player is $(s_{0},a_{0},b_{0},r_{0},\ldots ,s_{t},a_{t},b_{t},r_{t},\ldots )$. Within each episode, the quest remains unchanged, i.e., $h_{q,t}=h_{q,0}$ (so as the quest description $s_{q,t}=s_{q,0}$). When the player finishes the quest at time $K$, all rewards after time $K$ are assumed to be zero, i.e., $r_{t}=0$ for $t>K$. Over the course of the episode, the total discounted reward obtained by the player is
+
+$$\sum _{t=0}^{\infty }\gamma ^{t}r_{t}.$$
+ 
+We emphasize that the hidden state $h_{0}$,$\ldots $,$h_{T}$ are unobservable to the player.
+
+The learning goal of the player is to find a policy that $\pi :S\rightarrow C$ that maximizes the expected cumulative discounted reward $\mathbb {E}[\sum_{t=0}^{\infty}\gamma^{t}R(h_{t},a_{t},b_{t})\vert (a_{t},b_{t})\sim \pi ]$, where the expectation accounts for all randomness in the model and the player. Let $\pi^{*}$ denote the optimal policy. For each observable state $s\in S$, let $h(s)$ be the associated hidden state. The optimal expected reward achievable is defined as
+
+$$V^{*}=\mathbb {E}_{h_0\sim \Gamma _{0},s\sim \Psi (h)}[V^{*}(s)]$$
+ 
+where
+
+$$V^{*}(s)=\max_{\pi}\mathbb{E}[\sum_{t=0}^{\infty}\gamma^{t}R(h_{t},a_{t},b_{t})|h_{0}=h(s),s_{0}=s,(a_{t},b_{t})\sim \pi ].$$
+ 
+We can define the optimal Q-function as
+
+Q^{*}(s,a,b)=\max _{\pi }\mathbb {E}[\sum _{t=0}^{\infty }\gamma ^{t}R(h_{t},a_{t},b_{t})|h_{0}=h(s),s_{0}=s,a_{0}=a,b_{0}=b,(a_{t},b_{t})\sim \pi \text { for }t\geq 1].
+ 
+Note that given Q^{*}(s,a,b), we can obtain an optimal policy:
+
+\pi ^{*}(s)=\arg \max _{(a,b)\in C}Q^{*}(s,a,b).
+ 
+The commands set C contain all (action,object) pairs. Note that some commands are invalid. For instance, (eat,TV) is invalid for any state, and (eat, apple) is valid only when the player is in the kitchen (i.e., h_{r} corresponds to the index of kitchen). When an invalid command is taken, the system state remains unchanged and a negative reward is incurred. Recall that there are four rooms in this game. Assume that there are four quests in this game, each of which would be finished only if the player takes a particular command in a particular room. For example, the quest “You are sleepy" requires the player navigates through rooms to bedroom (with commands such as go east/west/south/north ) and then take a nap on the bed there. For each room, there is a corresponding quest that can be finished there.
+
+Note that in this game, the transition between states is deterministic. Since the player is placed at a random room and provided a randomly selected quest at the beginning of each episode, the distribution \Gamma _{0} of the initial state h_{0} is uniform over the hidden state space H.
