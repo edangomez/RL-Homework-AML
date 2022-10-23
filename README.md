@@ -38,7 +38,9 @@ Once, you complete tabular_q_learning and $\varepsilon$-greedy functions, in you
 
 Please include in your report the number of epochs and the plot when the learning algorithm converges. That is, the testing performance become stable. Also, please enter the average episodic rewards of your Q-learning algorithm when it converges.
 
-## Part 2. 
+## Part 2. Deep Q-network
+
+In this part, you will approximate $Q(s, c)$ with a neural network. You will be provided with a DQN that takes the state representation (bag-of-words) and outputs the predicted Q values for the different "actions" and "objects". Complete the function deep_q_learning that updates the model weights, given the transition date $(s,c,R(s,c),s')$. Please include in your report the average episodic rewards of your Q-learning algorithm when it converges.
 
 
 
