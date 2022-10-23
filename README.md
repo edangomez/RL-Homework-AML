@@ -44,12 +44,12 @@ $$V^{*}(s)=\max_{\pi}\mathbb{E}[\sum_{t=0}^{\infty}\gamma^{t}R(h_{t},a_{t},b_{t}
  
 We can define the optimal Q-function as
 
-Q^{*}(s,a,b)=\max _{\pi }\mathbb {E}[\sum _{t=0}^{\infty }\gamma ^{t}R(h_{t},a_{t},b_{t})|h_{0}=h(s),s_{0}=s,a_{0}=a,b_{0}=b,(a_{t},b_{t})\sim \pi \text { for }t\geq 1].
+$$Q^{*}(s,a,b)=\max_{\pi}\mathbb {E}[\sum _{t=0}^{\infty }\gamma^{t}R(h_{t},a_{t},b_{t})|h_{0}=h(s),s_{0}=s,a_{0}=a,b_{0}=b,(a_{t},b_{t})\sim \pi \text { for }t\geq 1].$$
  
-Note that given Q^{*}(s,a,b), we can obtain an optimal policy:
+Note that given $Q^{*}(s,a,b)$, we can obtain an optimal policy:
 
-\pi ^{*}(s)=\arg \max _{(a,b)\in C}Q^{*}(s,a,b).
+$$\pi^{*}(s)=\arg \max_{(a,b)\in C}Q^{*}(s,a,b).$$
  
-The commands set C contain all (action,object) pairs. Note that some commands are invalid. For instance, (eat,TV) is invalid for any state, and (eat, apple) is valid only when the player is in the kitchen (i.e., h_{r} corresponds to the index of kitchen). When an invalid command is taken, the system state remains unchanged and a negative reward is incurred. Recall that there are four rooms in this game. Assume that there are four quests in this game, each of which would be finished only if the player takes a particular command in a particular room. For example, the quest “You are sleepy" requires the player navigates through rooms to bedroom (with commands such as go east/west/south/north ) and then take a nap on the bed there. For each room, there is a corresponding quest that can be finished there.
+The commands set $C$ contain all **(action,object)** pairs. Note that some commands are invalid. For instance, (eat,TV) is invalid for any state, and (eat, apple) is valid only when the player is in the kitchen (i.e., $h_{r}$ corresponds to the index of kitchen). When an invalid command is taken, the system state remains unchanged and a negative reward is incurred. Recall that there are four rooms in this game. Assume that there are four quests in this game, each of which would be finished only if the player takes a particular command in a particular room. For example, the quest “You are sleepy" requires the player navigates through rooms to bedroom (with commands such as go east/west/south/north ) and then take a nap on the bed there. For each room, there is a corresponding quest that can be finished there.
 
-Note that in this game, the transition between states is deterministic. Since the player is placed at a random room and provided a randomly selected quest at the beginning of each episode, the distribution \Gamma _{0} of the initial state h_{0} is uniform over the hidden state space H.
+Note that in this game, the transition between states is deterministic. Since the player is placed at a random room and provided a randomly selected quest at the beginning of each episode, the distribution $\Gamma_{0}$ of the initial state $h_{0}$ is uniform over the hidden state space H.
