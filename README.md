@@ -20,7 +20,7 @@ In this section, you will implement the Q-learning algorithm using the ```agent_
 
 From now on, we will refer to $c = (a, b)$ as “an action" although it really is an action with an object.
 
-Q-learning Algorithm
+### Q-learning Algorithm
 
 The agent plays an action $c$ at state $s$, getting a reward $R(s,c)$ and observing the next state $s'$.
 
