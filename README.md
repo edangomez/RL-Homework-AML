@@ -16,7 +16,7 @@ To properlly understand the **Home World Game** we recommend you to read the REA
 
 ## Part 1. Tabular Q-Learning
 
-In this section, you will implement the Q-learning algorithm using the '''agent_tabular_ql.py''', which is a model-free algorithm used to learn an optimal Q-function. In the tabular setting, the algorithm maintains the Q-value for all possible state-action pairs. Starting from a random Q-function, the agent continuously collects experiences $(s,c,R(s,c),s')$ and updates its Q-function.
+In this section, you will implement the Q-learning algorithm using the ```agent_tabular_ql.py``` file, which is a model-free algorithm used to learn an optimal Q-function. In the tabular setting, the algorithm maintains the Q-value for all possible state-action pairs. Starting from a random Q-function, the agent continuously collects experiences $(s,c,R(s,c),s')$ and updates its Q-function.
 
 From now on, we will refer to $c = (a, b)$ as “an action" although it really is an action with an object.
 
