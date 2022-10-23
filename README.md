@@ -28,11 +28,11 @@ Update the single Q-value corresponding to each such transition:
 
 $$Q(s,c)\leftarrow (1-\alpha )Q(s,c)+\alpha [R(s,c)+\gamma \max _{c'\in C}Q(s',c')]$$
 
-**Write a function tabular_q_learning that updates the single Q-value, given the transition date $(s,c,R(s,c),s')$**
+**Write a function ```tabular_q_learning``` that updates the single Q-value, given the transition date $(s,c,R(s,c),s')$**
 
 Note that the Q-learning algorithm does not specify how we should interact in the world so as to learn quickly. It merely updates the values based on the experience collected. If we explore randomly, i.e., always select actions at random, we would most likely not get anywhere. A better option is to exploit what we have already learned, as summarized by current Q-values. We can always act greedily with respect to the current estimates, i.e., take an action $\pi (s)=\arg \max _{c\in C}Q(s,c)$. Of course, early on, these are not necessarily very good actions. For this reason, a typical exploration strategy is to follow a so-called \varepsilon-greedy policy: with probability $\varepsilon$ take a random action out of $C$ with probability $1-\varepsilon$ follow $\pi (s)=\arg \max _{c\in C}Q(s,c)$. The value of \varepsilon here balances exploration vs exploitation. A large value of \varepsilon means exploring more (randomly), not using much of what we have learned. A small \varepsilon, on the other hand, will generate experience consistent with the current estimates of Q-values.
 
-**Write a function epsilon_greedy that implements the $\varepsilon$-greedy exploration policy using the current Q-function.**
+**Write a function ```epsilon_greedy``` that implements the $\varepsilon$-greedy exploration policy using the current Q-function.**
 
 Once, you complete tabular_q_learning and $\varepsilon$-greedy functions, in your Q-learning algorithm, initialize Q at zero. Set NUM_RUNS =10, NUM_EPIS_TRAIN =25, NUM_EPIS_TEST=50, \gamma =0.5, TRAINING_EP=0.5, TESTING_EP=0.05 and the learning rate \alpha =0.1.
 
