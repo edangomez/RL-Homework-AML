@@ -12,7 +12,7 @@ In order to design an autonomous game player, we will employ a reinforcement lea
 
 3. Use your Q-learning algorithms on the Home World game.
 
-To properlly understand the **Home World Game** we recommend you to read the README in the Home-world folder of this repo
+To properlly understand the **Home World Game** we recommend you to read the README in the ```Home-world``` folder of this repo
 
 ## Part 1. Tabular Q-Learning
 
