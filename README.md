@@ -34,7 +34,7 @@ Note that the Q-learning algorithm does not specify how we should interact in th
 
 **Write a function ```epsilon_greedy``` that implements the $\varepsilon$-greedy exploration policy using the current Q-function.**
 
-Once, you complete tabular_q_learning and $\varepsilon$-greedy functions, in your Q-learning algorithm, initialize Q at zero. Set ```NUM_RUNS =10```, ```NUM_EPIS_TRAIN =25```, ```NUM_EPIS_TEST=50```, $\gamma$ =0.5, ```TRAINING_EP=0.5```, ```TESTING_EP=0.05``` and the learning rate $\alpha =0.1$.
+Once, you complete tabular_q_learning and $\varepsilon$-greedy functions, in your Q-learning algorithm, initialize Q at zero. Set ```NUM_RUNS = 10```, ```NUM_EPIS_TRAIN = 25```, ```NUM_EPIS_TEST = 50```, $\gamma$ = 0.5, ```TRAINING_EP = 0.5```, ```TESTING_EP = 0.05``` and the learning rate $\alpha = 0.1$.
 
 Please include in your report the number of epochs and the plot when the learning algorithm converges. That is, the testing performance become stable. Also, please enter the average episodic rewards of your Q-learning algorithm when it converges.
 
