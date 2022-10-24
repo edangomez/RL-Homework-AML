@@ -38,7 +38,7 @@ Once, you complete tabular_q_learning and $\varepsilon$-greedy functions, in you
 
 Please include in your report the number of epochs and the plot when the learning algorithm converges. That is, the testing performance become stable. Also, please enter the average episodic rewards of your Q-learning algorithm when it converges.
 
-Check the ```useful2know``` to get better insights on how the code works and how are all ```.py``` files useful.
+Check the ```useful2know``` folder to get better insights on how the code works and how are all ```.py``` files useful.
 
 ## Part 2. Deep Q-network
 
