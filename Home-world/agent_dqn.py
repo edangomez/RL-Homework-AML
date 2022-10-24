@@ -92,7 +92,9 @@ def deep_q_learning(current_state_vector, action_index, object_index, reward,
                     q_value_cur_state[1][object_index]) # Current Q value 
 
     # TODO Your code here
-    # Hint --> Depending on you implementation it might be useful to create maxQ and y variables to define the loss
+    # Hint --> Depending on you implementation is useful to create maxQ and y variables to define the loss
+    maxQ = None
+    y = None
     loss = None
 
     optimizer.zero_grad()
@@ -142,10 +144,12 @@ def run_episode(for_training):
 
         if not for_training:
             # update reward
+            # Hint --> Recall discounted reward utility function
             # TODO Your code here
             pass
 
         # prepare next step
+        # Hint --> Update room and quest
         # TODO Your code here
 
     if not for_training:

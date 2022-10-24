@@ -61,9 +61,15 @@ def tabular_q_learning(q_func, current_state_1, current_state_2, action_index,
         None
     """
     # TODO Your code here
-    q_func[current_state_1, current_state_2, action_index,
-           object_index] = 0  # TODO Your update here
-
+    # Hint --> Recall the Q-Value update from the repo and the terminal parameter
+    
+    if terminal == False:
+        q_func[current_state_1, current_state_2, action_index,
+           object_index] = None  
+    else:
+        # TODO Your update here
+        q_func[current_state_1, current_state_2, action_index,
+           object_index] = None  
     return None  # This function shouldn't return anything
 
 
