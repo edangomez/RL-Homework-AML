@@ -28,6 +28,8 @@ Update the single Q-value corresponding to each such transition:
 
 $$Q(s,c)\leftarrow (1-\alpha )Q(s,c)+\alpha [R(s,c)+\gamma \max _{c'\in C}Q(s',c')]$$
 
+*** CODE (1.5 points)***
+
 **Write a function ```tabular_q_learning``` that updates the single Q-value, given the transition date $(s,c,R(s,c),s')$**
 
 Note that the Q-learning algorithm does not specify how we should interact in the world so as to learn quickly. It merely updates the values based on the experience collected. If we explore randomly, i.e., always select actions at random, we would most likely not get anywhere. A better option is to exploit what we have already learned, as summarized by current Q-values. We can always act greedily with respect to the current estimates, i.e., take an action $\pi (s)=\arg \max _{c\in C}Q(s,c)$. Of course, early on, these are not necessarily very good actions. For this reason, a typical exploration strategy is to follow a so-called $\varepsilon$-greedy policy: with probability $\varepsilon$ take a random action out of $C$ with probability $1-\varepsilon$ follow $\pi (s)=\arg \max _{c\in C}Q(s,c)$. The value of \varepsilon here balances exploration vs exploitation. A large value of \varepsilon means exploring more (randomly), not using much of what we have learned. A small \varepsilon, on the other hand, will generate experience consistent with the current estimates of Q-values.
@@ -40,7 +42,7 @@ Please include in your report the number of epochs and the plot when the learnin
 
 Check the ```useful2know``` folder to get better insights on how the code works and how are all ```.py``` files useful.
 
-***QUESTIONS:***
+***QUESTIONS (0.5 points):***
 - What happen to the convergence of the Q-learning algorithm for very large $\varepsilon = 1$ compared to a small $\varepsilon = 0.00001$?
 - What happen to the convergence of the Q-learning algorithm for different values of $\alpha$? Fix $\varepsilon = 0.5$  and do the experiments with different values of the training $\alpha \in [10^{-6}, 1]$. Explain you results.
 
@@ -48,9 +50,11 @@ Check the ```useful2know``` folder to get better insights on how the code works 
 
 Since the state displayed to the agent is described in text, we have to choose a mechanism that maps text descriptions into vector representations. A naive way is to create one unique index for each text description, as we have done in previous part. However, such approach becomes infeasible when the state space becomes huge. To tackle this challenge, we can design some representation generator that does not scale as the original textual state space. In particular, a representation generator $\phi_R(\cdot)$ reads raw text displayed to the agent and converts it to a vector representation $v_{s}=\psi _{R}(s)$. One approach is to use a bag-of-words representation derived from the text description.
 
+***CODE (1.5 point)***
+
 In this part, you will approximate $Q(s, c)$ with a neural network. You will be provided with a DQN that takes the state representation (bag-of-words) and outputs the predicted Q values for the different "actions" and "objects". Complete the function ```deep_q_learning``` that updates the model weights, given the transition date $(s,c,R(s,c),s')$. Also, complete the necessary TODOs. Please include in your report the average episodic rewards of your Q-learning algorithm when it converges.
 
-***QUESTIONS:*** 
+***QUESTIONS (0.5 points):*** 
 - How would you change your model if the state displayed to the agent was an image of the state rather than a text description?
 - What is the purpose of the epsilon parameter on the $\varepsilon$-greedy function? Explain what would happen if $\varepsilon = 0$ or $\varepsilon = 1$.
 
