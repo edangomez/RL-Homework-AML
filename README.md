@@ -74,3 +74,5 @@ Experiment with different values of $\gamma$ using tabular and DeepQN with bag o
 ## Report
 
 Upload a pdf file with your report named LastName_report.pdf. Also, upload the code and gifs to the repo
+
+This repo and project are based on Reinforcement Learning projecto from 6.86x Machine Learning from Linear Models to Deep learning EdX course.
