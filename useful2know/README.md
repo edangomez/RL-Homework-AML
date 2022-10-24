@@ -46,3 +46,5 @@ Finally, at the end of the experiment, you will get a sequence of data (of size 
 Note that there is randomness in both the training and testing phase. You will run the experiment ```NUM_RUNS``` times and then compute the averaged reward performance over ```NUM_RUNS``` experiments.
 
 Most of these operations are handled by the boilerplate code provided in the ```agent_tabular_QL.py``` file by functions run, run_epoch and main, but you will need to complete the run_episode function.
+
+```run_episode``` function that takes a boolean argument (whether the epsiode is a training episode or not) and runs one episode.

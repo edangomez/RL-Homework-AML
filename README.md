@@ -38,6 +38,8 @@ Once, you complete tabular_q_learning and $\varepsilon$-greedy functions, in you
 
 Please include in your report the number of epochs and the plot when the learning algorithm converges. That is, the testing performance become stable. Also, please enter the average episodic rewards of your Q-learning algorithm when it converges.
 
+Check the ```useful2know``` to get better insights on how the code works and how are all ```.py``` files useful.
+
 ## Part 2. Deep Q-network
 
 Since the state displayed to the agent is described in text, we have to choose a mechanism that maps text descriptions into vector representations. A naive way is to create one unique index for each text description, as we have done in previous part. However, such approach becomes infeasible when the state space becomes huge. To tackle this challenge, we can design some representation generator that does not scale as the original textual state space. In particular, a representation generator $\phi_R(\cdot)$ reads raw text displayed to the agent and converts it to a vector representation $v_{s}=\psi _{R}(s)$. One approach is to use a bag-of-words representation derived from the text description.
