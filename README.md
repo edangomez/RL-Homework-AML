@@ -54,6 +54,19 @@ In this part, you will approximate $Q(s, c)$ with a neural network. You will be 
 - How would you change your model if the state displayed to the agent was an image of the state rather than a text description?
 - What is the purpose of the epsilon parameter on the $\varepsilon$-greedy function? Explain what would happen if $\varepsilon = 0$ or $\varepsilon = 1$.
 
+## Part 3. Deep Q-network Visualization (1 point)
+
+In this section, we will visualize the behavior of the agent and the reward by varying some parameters that were discussed in class (i.e: Discount factor, Episodes, Learning Rate and Epsilon). For this, you must run the 'Run.py' file located in the 'Lunar-Lander' folder. For this, we will start by entering the 'Lunar-Lander' folder (cd ../Lunar_Lander/) and installing the necessary libraries:
+
+'''
+conda create -n RLHW python=3.7dd
+conda activate RLHW
+conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 -c pytorch
+pip install -r requirements.txt
+'''
+
+Now that you have your environment ready, you will have to play with three parameters of those mentioned above and perform at least 6 experiments. In your report, include the Reward vs Episode charts and briefly discuss them. Also, include a gif in your repo that compares the performance of the algorithm in a low episode, a mid episode, and a high episode. In your report, include a brief analysis of these animations.
+
 ## BONUS (0.3 points)
 
 Experiment with different values of $\gamma$ using tabular and DeepQN with bag of words and comment on the influence of these parameter in the results.
