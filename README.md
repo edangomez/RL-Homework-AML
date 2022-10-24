@@ -71,3 +71,6 @@ Now that you have your environment ready, you will have to play with three param
 
 Experiment with different values of $\gamma$ using tabular and DeepQN with bag of words and comment on the influence of these parameter in the results.
 
+## Report
+
+Upload a pdf file with your report named LastName_report.pdf. Also, upload the code and gifs to the repo
