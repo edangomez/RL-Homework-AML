@@ -84,10 +84,10 @@ def run_episode(for_training):
     """
     epsilon = TRAINING_EP if for_training else TESTING_EP
 
+    # initialize for each episode
     epi_reward = 0
     count = 0
-    # initialize for each episode
-    # TODO Your code here
+   
 
     (current_room_desc, current_quest_desc, terminal) = framework.newGame()
 

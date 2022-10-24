@@ -31,18 +31,24 @@ optimizer = None
 
 def epsilon_greedy(state_vector, epsilon):
     """Returns an action selected by an epsilon-greedy exploration policy
-
     Args:
         state_vector (torch.FloatTensor): extracted vector representation
         theta (np.ndarray): current weight matrix
         epsilon (float): the probability of choosing a random command
-
     Returns:
         (int, int): the indices describing the action/object to take
     """
-    # TODO Your code here
-    action_index, object_index = None, None
-    return (action_index, object_index)
+    # Toss a coin to decide what to do
+    if np.random.binomial(1, epsilon):
+        # Randomly choose action and object
+        action_index, object_index = np.random.randint(NUM_ACTIONS, size=1), \
+                                    np.random.randint(NUM_OBJECTS, size=1)
+    else:
+        # Choose the best action and object
+        act_arr, obj_arr = model(state_vector)
+        action_index, object_index = torch.argmax(act_arr), torch.argmax(obj_arr)
+        
+    return (int(action_index), int(object_index))
 
 class DQN(nn.Module):
     """A simple deep Q network implementation.
@@ -82,9 +88,11 @@ def deep_q_learning(current_state_vector, action_index, object_index, reward,
                          + q_values_object_next.max())
 
     q_value_cur_state = model(current_state_vector)
+    Q_val_cur = 1/2 * (q_value_cur_state[0][action_index] + \
+                    q_value_cur_state[1][object_index]) # Current Q value 
 
     # TODO Your code here
-
+    # Hint --> Depending on you implementation it might be useful to create maxQ and y variables to define the loss
     loss = None
 
     optimizer.zero_grad()
@@ -112,10 +120,23 @@ def run_episode(for_training):
         current_state_vector = torch.FloatTensor(
             utils.extract_bow_feature_vector(current_state, dictionary))
 
-        # TODO Your code here
+        next_action_index, next_object_index = epsilon_greedy(current_state_vector,
+                                                              epsilon) # Get next action, object
+        
+        next_room_desc, next_quest_desc, reward, terminal = framework.step_game(
+                                                            current_room_desc,
+                                                            current_quest_desc,
+                                                            next_action_index,
+                                                            next_object_index) # Take a step
+
+        next_state = next_room_desc + next_quest_desc   # Build next state tensor
+        next_state_vector = torch.FloatTensor(
+                                utils.extract_bow_feature_vector(next_state, 
+                                                                 dictionary)) 
 
         if for_training:
             # update Q-function.
+            # Hint --> update the weights
             # TODO Your code here
             pass
 
