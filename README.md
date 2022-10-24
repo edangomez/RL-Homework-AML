@@ -28,7 +28,7 @@ Update the single Q-value corresponding to each such transition:
 
 $$Q(s,c)\leftarrow (1-\alpha )Q(s,c)+\alpha [R(s,c)+\gamma \max _{c'\in C}Q(s',c')]$$
 
-*** CODE (1.5 points)***
+***CODE (1.5 points)***
 
 **Write a function ```tabular_q_learning``` that updates the single Q-value, given the transition date $(s,c,R(s,c),s')$**
 
