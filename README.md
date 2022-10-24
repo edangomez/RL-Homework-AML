@@ -46,5 +46,7 @@ Since the state displayed to the agent is described in text, we have to choose a
 
 In this part, you will approximate $Q(s, c)$ with a neural network. You will be provided with a DQN that takes the state representation (bag-of-words) and outputs the predicted Q values for the different "actions" and "objects". Complete the function deep_q_learning that updates the model weights, given the transition date $(s,c,R(s,c),s')$. Please include in your report the average episodic rewards of your Q-learning algorithm when it converges.
 
+## BONUS
 
+Experiment with different values of $\gamma$ using tabular and DeepQN with bag of words and comment on the influence of these parameter in the results.
 
