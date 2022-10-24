@@ -67,7 +67,7 @@ pip install -r requirements.txt
 
 Now that you have your environment ready, you will have to play with three parameters of those mentioned above and perform at least 6 experiments. In your report, include the Reward vs Episode charts and briefly discuss them. Also, include a gif in your repo that compares the performance of the algorithm in a low episode, a mid episode, and a high episode. In your report, include a brief analysis of these animations.
 
-## BONUS (0.3 points)
+## ¡BONUS! (0.3 points)
 
 Experiment with different values of $\gamma$ using tabular and DeepQN with bag of words and comment on the influence of these parameter in the results.
 
