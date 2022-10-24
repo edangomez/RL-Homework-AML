@@ -1,0 +1,8 @@
+tqdm
+opencv-python
+atari-py
+gym==0.17.3
+gym[box2d]
+pyglet==1.4.0
+tensorboardX
+matplotlib
