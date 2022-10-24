@@ -108,10 +108,10 @@ def run_episode(for_training):
         If for testing, computes and return cumulative discounted reward
     """
     epsilon = TRAINING_EP if for_training else TESTING_EP
-    epi_reward = None
-
+    
     # initialize for each episode
     # TODO Your code here
+    epi_reward = None
 
     (current_room_desc, current_quest_desc, terminal) = framework.newGame()
     while not terminal:
